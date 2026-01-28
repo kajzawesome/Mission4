@@ -9,6 +9,7 @@ bool validGuess = false;
 int player1 = 0;
 int player2 = 0;
 
+// fill board with char blank
 for (int i = 0; i < 9; i++)
 {
     choices[i] = ' ';
@@ -19,7 +20,6 @@ do
     // Player one move
     sp.printBoard(choices);
 
-    validGuess = false; //
     Console.WriteLine("Player 1, you are X. Enter your choice (1-9): ");
     do
     {
@@ -30,7 +30,7 @@ do
         catch
         {
             Console.WriteLine("That wasn't a valid number.");
-            continue; // 
+            continue; // checking for anything besides an int
         }
 
         if (player1 < 1 || player1 > 9)
@@ -61,7 +61,7 @@ do
     // Player two move
     sp.printBoard(choices);
 
-    validGuess = false; // 
+    validGuess = false; // reset to false
     Console.WriteLine("Player 2, you are O. Enter your choice (1-9): ");
     do
     {
