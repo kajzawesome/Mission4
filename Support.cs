@@ -54,6 +54,34 @@ public class Support
 
 	public bool gameOver(char[] board)
 	{
+        bool gameOver = false;
 
-	}
+        // Check rows
+        for (int i = 0; i < 9; i += 3)
+        {
+            if (board[i] != ' ' && board[i] == board[i + 1] && board[i] == board[i + 2])
+            {
+                gameOver = true;
+            }
+        }
+        // Check columns
+        for (int i = 0; i < 3; i++)
+        {
+            if (board[i] != ' ' && board[i] == board[i + 3] && board[i] == board[i + 6])
+            {
+                gameOver = true;
+            }
+        }
+        // Check diagonals
+        if (board[0] != ' ' && board[0] == board[4] && board[0] == board[8])
+        {
+            gameOver = true;
+        }
+        if (board[2] != ' ' && board[2] == board[4] && board[2] == board[6])
+        {
+            gameOver = true;
+        }
+
+        return gameOver;
+    }
 }
