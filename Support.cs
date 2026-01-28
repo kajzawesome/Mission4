@@ -61,6 +61,8 @@ public class Support
         {
             if (board[i] != ' ' && board[i] == board[i + 1] && board[i] == board[i + 2])
             {
+                Console.WriteLine("Game Over");
+                Console.WriteLine($"Winner: {board[i]}");
                 gameOver = true;
             }
         }
@@ -69,16 +71,22 @@ public class Support
         {
             if (board[i] != ' ' && board[i] == board[i + 3] && board[i] == board[i + 6])
             {
+                Console.WriteLine("Game Over");
+                Console.WriteLine($"Winner: {board[i]}"); 
                 gameOver = true;
             }
         }
         // Check diagonals
         if (board[0] != ' ' && board[0] == board[4] && board[0] == board[8])
         {
+            Console.WriteLine("Game Over");
+            Console.WriteLine($"Winner: {board[0]}");
             gameOver = true;
         }
         if (board[2] != ' ' && board[2] == board[4] && board[2] == board[6])
         {
+            Console.WriteLine("Game Over");
+            Console.WriteLine($"Winner: {board[2]}");
             gameOver = true;
         }
 
